@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/SabrinaGuo/sabrinaweb/static/css/main.5f361e03.chunk.css",
+    "main.js": "/SabrinaGuo/sabrinaweb/static/js/main.c1041e9f.chunk.js",
+    "main.js.map": "/SabrinaGuo/sabrinaweb/static/js/main.c1041e9f.chunk.js.map",
+    "runtime-main.js": "/SabrinaGuo/sabrinaweb/static/js/runtime-main.9f5e31f9.js",
+    "runtime-main.js.map": "/SabrinaGuo/sabrinaweb/static/js/runtime-main.9f5e31f9.js.map",
+    "static/js/2.6e53a5ac.chunk.js": "/SabrinaGuo/sabrinaweb/static/js/2.6e53a5ac.chunk.js",
+    "static/js/2.6e53a5ac.chunk.js.map": "/SabrinaGuo/sabrinaweb/static/js/2.6e53a5ac.chunk.js.map",
+    "index.html": "/SabrinaGuo/sabrinaweb/index.html",
+    "precache-manifest.25d893267f3c3bc13f2e04bd4138b659.js": "/SabrinaGuo/sabrinaweb/precache-manifest.25d893267f3c3bc13f2e04bd4138b659.js",
+    "service-worker.js": "/SabrinaGuo/sabrinaweb/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/SabrinaGuo/sabrinaweb/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.6e53a5ac.chunk.js.LICENSE.txt": "/SabrinaGuo/sabrinaweb/static/js/2.6e53a5ac.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/SabrinaGuo/sabrinaweb/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f5e31f9.js",
+    "static/js/2.6e53a5ac.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.c1041e9f.chunk.js"
+  ]
+}
