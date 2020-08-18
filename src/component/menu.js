@@ -7,7 +7,7 @@ const menuList = ['introduce', 'skills', 'myworks', 'others'];
 
 const Menu = (props) => {
     return (
-        <MenuStyle>
+        <MenuStyle className={props.open &&'open'}>
             <ul>
                 {
                     menuList.map((item, idx) => {

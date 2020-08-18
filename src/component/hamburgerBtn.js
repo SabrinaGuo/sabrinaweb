@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 
 const HamburgerBtn = (props) => {
-    console.log(props.open);
+    console.log(props);
     return (
-        <MenuBtn className={props.open &&'open'}>
+        <MenuBtn className={props.open &&'open'} onClick={props.onClick}>
             <span></span>
             <span></span>
             <span></span>
