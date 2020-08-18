@@ -18,4 +18,5 @@ export default Indexpage;
 const BodyStyle = styled.div`
   height:500vh;
   overflow-x:hidden;
+  width:100%;
 `
