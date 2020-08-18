@@ -60,19 +60,22 @@ const Gotop = props => {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 1px solid #343434;
+    background-color:#fff;
+    border:2px solid #7bbff4;
     cursor: pointer;
-    background-color: transparent;
     transition: 0.3s;
     text-align: center;
     display: ${(props) =>
       props.style.showGoTopBtn ? "block" : "none"};
     span {
       line-height: 60px;
-      color: #343434;
+      color: #7bbff4;
     }
     &:hover {
-      background-color: #999999;
+      background-color: #7bbff4;
+      span {
+        color: #fff;
+      }
     }
     @media (max-width: 768px) {
       right: 20px;
