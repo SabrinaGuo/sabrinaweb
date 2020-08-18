@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const menuList = ['introduce', 'skills', 'myworks', 'others'];
 
 
-const Menu = () => {
+const Menu = (props) => {
     return (
         <MenuStyle>
             <ul>

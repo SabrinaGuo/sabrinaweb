@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Menu from './component/menu';
 import Gotop from './component/gotop';
+import HamburgerBtn from './component/hamburgerBtn';
 
-function Indexpage() {
+const Indexpage = () => {
+  const[open,setOpen] = React.useState(false);
+  const openBtn = () =>{
+    console.log('1111');
+      setOpen(!open);
+  }
+
   return (
     <BodyStyle>
-      <Menu />
+      <HamburgerBtn open={open} onClick={openBtn}/>
+      <Menu open={open} />
       <Gotop animationDuration={"smooth"}><span>GOTOP</span></Gotop>
     </BodyStyle>
   );
