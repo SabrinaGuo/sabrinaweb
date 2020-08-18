@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/sabrinaweb/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/sabrinaweb/static/js/main.089bcf9d.chunk.js",
-    "main.js.map": "/sabrinaweb/static/js/main.089bcf9d.chunk.js.map",
+    "main.js": "/sabrinaweb/static/js/main.a63d68c4.chunk.js",
+    "main.js.map": "/sabrinaweb/static/js/main.a63d68c4.chunk.js.map",
     "runtime-main.js": "/sabrinaweb/static/js/runtime-main.2c71b949.js",
     "runtime-main.js.map": "/sabrinaweb/static/js/runtime-main.2c71b949.js.map",
-    "static/js/2.12ae5aa3.chunk.js": "/sabrinaweb/static/js/2.12ae5aa3.chunk.js",
-    "static/js/2.12ae5aa3.chunk.js.map": "/sabrinaweb/static/js/2.12ae5aa3.chunk.js.map",
+    "static/js/2.90bbaa16.chunk.js": "/sabrinaweb/static/js/2.90bbaa16.chunk.js",
+    "static/js/2.90bbaa16.chunk.js.map": "/sabrinaweb/static/js/2.90bbaa16.chunk.js.map",
     "index.html": "/sabrinaweb/index.html",
-    "precache-manifest.0c2b3ec77ee5ccb6e04ebbc3bd2087cd.js": "/sabrinaweb/precache-manifest.0c2b3ec77ee5ccb6e04ebbc3bd2087cd.js",
+    "precache-manifest.0ded883f4f276f7e9b6165e86520a4b1.js": "/sabrinaweb/precache-manifest.0ded883f4f276f7e9b6165e86520a4b1.js",
     "service-worker.js": "/sabrinaweb/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/sabrinaweb/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.12ae5aa3.chunk.js.LICENSE.txt": "/sabrinaweb/static/js/2.12ae5aa3.chunk.js.LICENSE.txt"
+    "static/js/2.90bbaa16.chunk.js.LICENSE.txt": "/sabrinaweb/static/js/2.90bbaa16.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2c71b949.js",
-    "static/js/2.12ae5aa3.chunk.js",
+    "static/js/2.90bbaa16.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.089bcf9d.chunk.js"
+    "static/js/main.a63d68c4.chunk.js"
   ]
 }
