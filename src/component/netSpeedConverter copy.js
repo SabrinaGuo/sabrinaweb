@@ -49,13 +49,17 @@ const CardFooter = (props) => {
 
 
 const NetSpeedConverter = () => {
+  //監控使用者於input中輸入東西 監聽input的 onChange
   const [inputValue, setInputValue] = React.useState(0);
+  //取得input的value
   const handleInputChange = (e) => {
     const { value } = e.target;
     setInputValue(value);
   }
 
   return (
+    // 輸入 Mbps 自動轉換成 MB/s
+    // 根據輸入的數字不同，最下方會呈現不同的樣式和文字說明
     <NetCSS className="container">
       <div className="card-header">Network Speed Converter</div>
       <div className="card-body">
@@ -78,6 +82,7 @@ const NetSpeedConverter = () => {
             <input
               className="input-number text-right"
               type="text"
+              // 1 Mbps = 0.125 MB/s ，也就是 Mbps 的值除以 8 才會是 MB/s
               value={inputValue / 8}
               disabled
             />

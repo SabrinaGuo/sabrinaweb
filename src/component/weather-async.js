@@ -19,22 +19,41 @@ const Weather = () => {
         comfortability: '',
     });
 
+
+    // 透過 async 和 Promise 拉取並等待資料回應
+    // 第一個部分主要是拉取資料，做法會像這樣：
+
+    // 在 useEffect 的函式中定義 async function，取名為 fetchData，在這個 function 中會同時呼叫兩道 fetch API
+    // 由於 fetch API 本身就會回傳 Promise，因此透過 async function 中的 await 語法搭配 Promise.all就可以等待 fetch API 的資料都回應後才讓程式碼繼續往後走
+    // fetch API 原本就會回傳 Promise，因此在 fetchCurrentWeather 和 fetchWeatherForecast 中，不是只是呼叫 fetch 方法，而是把 fetch 方法呼叫後得到的 Promise 回傳出去
+    // 在 fetchCurrentWeather 和 fetchWeatherForecast 的函式中，不直接去 setWeatherElement 而是把取得的資料回傳出去
+    // 記得要在 useEffect 中執行定義好的 fetchData 這個函式
+
+
+
     React.useEffect(() => {
+        // STEP 1：在 useEffect 中定義 async function 取名為 fetchData
         const fetchData = async () => {
+            // STEP 2：使用 Promise.all 搭配 await 等待兩個 API 都取得回應後才繼續
             const [currentWeather,weatherForecast] = await Promise.all([
+                 // STEP 6：使用陣列的解構賦值把資料取出
                 fetchCurrentWeather(),
                 fetchWeatherForecast(),
             ]);
+            // console.log('data',currentWeather,'ppp',weatherForecast);
+              // STEP 7：把取得的資料透過物件的解構賦值放入
             setWeatherElement({
                 ...currentWeather,
                 ...weatherForecast,
             });
         }
+        // STEP 5：呼叫 fetchData 這個方法
         fetchData();
 
     }, []);
 
     const fetchCurrentWeather = () => {
+         // STEP 3-1：加上 return 直接把 fetch API 回傳的 Promise 回傳出去
        return fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-F86B7ED3-2F5E-4BC9-BB43-025BE731A1BC&locationName=臺北')// 向 requestURL 發送請求 ex 氣象局
             .then((res) => res.json())
             .then((data) => {
@@ -49,6 +68,7 @@ const Weather = () => {
                     {}
                 )
                
+                 // STEP 3-2：把取得的資料內容回傳出去，而不是在這裡 setWeatherElement
                 return {
                     observationTime: locationData.time.obsTime,
                     locationName: locationData.locationName,
@@ -60,6 +80,7 @@ const Weather = () => {
 
     }
     const fetchWeatherForecast = () => {
+       // STEP 4-1：加上 return 直接把 fetch API 回傳的 Promise 回傳出去
         return  fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-F86B7ED3-2F5E-4BC9-BB43-025BE731A1BC&locationName=臺北市')// 向 requestURL 發送請求 ex 氣象局
             .then((res) => res.json())
             .then((data) => {
@@ -76,6 +97,7 @@ const Weather = () => {
                     },
                     {}
                 )
+                 // STEP 4-2：把取得的資料內容回傳出去，而不是在這裡 setWeatherElement
                 return {
                     description: weatherEle.Wx.parameterName,
                     weatherCode: weatherEle.Wx.parameterValue,
@@ -123,6 +145,8 @@ const Weather = () => {
 }
 export default Weather;
 
+// 匯入 Emotion 提供的 css 函式   import { css } from '@emotion/core';
+// 將一批 CSS 樣式定義成 JavaScript 函式
 const buttonDefault = (props) => css`
   display: block;
   width: 120px;
@@ -131,6 +155,8 @@ const buttonDefault = (props) => css`
   background-color: transparent;
   color: ${props.theme === 'dark' ? '#dadada' : '#212121'};
 `;
+//在定義 Styled Components 時載入定義好的 CSS 樣式
+// 和 CSS 一樣，同樣的樣式後面寫的會覆蓋前面寫的
 const rejectButton = styled.button`
   ${buttonDefault}
   background-color: red;
@@ -142,8 +168,10 @@ const acceptButton = styled.button`
 `
 
 
+// 透過 styled(組件) 來把樣式帶入已存在的組件中
 
 const Cloudy = styled(CloudyIcon)`
+  /* 在這裡寫入 CSS 樣式 */
   flex-basis: 30%;
 `;
 

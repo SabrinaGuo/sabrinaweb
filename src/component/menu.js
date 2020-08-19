@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 const menuList = ['introduce', 'skills', 'myworks', 'others'];
@@ -13,7 +12,7 @@ const Menu = (props) => {
                     menuList.map((item, idx) => {
                         return (
                             <li key={idx} >
-                                <a href="">{item}</a>
+                                <div>{item}</div>
                             </li>
                         )
                     })
@@ -38,6 +37,7 @@ const MenuStyle = styled.div`
         flex-wrap:wrap;
         li{
             max-width:calc((100% / ${menuList.length}) - 20px);
+            padding:15px 0;
             margin:0 10px;
             width:100%;
             list-style-type:none;
