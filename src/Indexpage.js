@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Menu from './component/menu';
 import Gotop from './component/gotop';
 import HamburgerBtn from './component/hamburgerBtn';
-import NetSpeedConverter from './component/netSpeedConverter';
+// import NetSpeedConverter from './component/netSpeedConverter';
 import Weather from './component/weather';
 
 const Indexpage = () => {
@@ -17,7 +17,7 @@ const Indexpage = () => {
       <HamburgerBtn open={open} onClick={openBtn}/>
       <Menu open={open} />
       <Gotop animationDuration={"smooth"}><span>GOTOP</span></Gotop>
-      <NetSpeedConverter/>
+      {/* <NetSpeedConverter/> */}
       <Weather/>
     </BodyStyle>
   );

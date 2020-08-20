@@ -54,7 +54,7 @@ const Weather = () => {
 
     const fetchCurrentWeather = () => {
          // STEP 3-1：加上 return 直接把 fetch API 回傳的 Promise 回傳出去
-       return fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-F86B7ED3-2F5E-4BC9-BB43-025BE731A1BC&locationName=臺北')// 向 requestURL 發送請求 ex 氣象局
+       return fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-F86B7ED3-2F5E-4BC9-BB43-025BE731A1BC&locationName=臺北')
             .then((res) => res.json())
             .then((data) => {
                 const locationData = data.records.location[0];
