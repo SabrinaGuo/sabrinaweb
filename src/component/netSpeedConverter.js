@@ -15,12 +15,12 @@ const UnitControl = () => {
   )
 }
 const CardFooter = (props) => {
-  const {inputValue} = props;
+  const { inputValue } = props;
   let standard;
 
   if (!inputValue) {
     standard = {
-      title : '---',
+      title: '---',
       backgroundColor: '#d3d8e2',
     };
   } else if (inputValue < 15) {
@@ -42,7 +42,7 @@ const CardFooter = (props) => {
 
   return (
     <div className="card-footer"
-      style={{backgroundColor:standard.backgroundColor}}
+      style={{ backgroundColor: standard.backgroundColor }}
     >{standard.title}</div>
   )
 }
@@ -95,16 +95,17 @@ const NetCSS = styled.div`
 
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 1px 10px 1px #333;
+  border:1px solid #eee;
   border-radius: 7px;
   background: white;
   max-width: 440px;
   width:100%;
   min-height: 320px;
   margin:15px auto;
-
+  box-sizing:border-box;
 
 .card-header {
+  width:100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,7 +118,6 @@ const NetCSS = styled.div`
 }
 
 .card-body {
-  flex: 1;
   padding: 30px;
 }
 
@@ -151,12 +151,16 @@ const NetCSS = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+       padding:0 15px;
+  }
 }
 
 .converter-title {
   color: #a8aeba;
   font-weight: bold;
   margin-bottom: 12px;
+  width:100%;
 }
 
 .card-footer {
@@ -174,7 +178,6 @@ const NetCSS = styled.div`
 .input-number {
   font-size: 32px;
   max-width: 170px;
-  flex: 1;
   display: inline-block;
   background: transparent;
   border: none;
@@ -182,13 +185,15 @@ const NetCSS = styled.div`
   font-family: Courier;
   color: #2d7bee;
   font-weight: bold;
+  width:100%;
 }
 
 .text-right {
   text-align: right;
 }
 .flex-1 {
-  flex: 1;
+  width: 100%;
+  max-width: 50%;
 }
 
 `

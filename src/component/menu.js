@@ -6,7 +6,7 @@ const menuList = ['introduce', 'skills', 'myworks', 'others'];
 
 const Menu = (props) => {
     return (
-        <MenuStyle className={props.open &&'open'}>
+        <MenuStyle className={props.open && 'open'}>
             <ul>
                 {
                     menuList.map((item, idx) => {
@@ -37,7 +37,6 @@ const MenuStyle = styled.div`
         flex-wrap:wrap;
         li{
             max-width:calc((100% / ${menuList.length}) - 20px);
-            padding:15px 0;
             margin:0 10px;
             width:100%;
             list-style-type:none;
@@ -46,8 +45,9 @@ const MenuStyle = styled.div`
             border-radius:32px 32px 0 0;
             border:3px solid #fff;
             transition:all 0.3s;
-            box-sizing:border-box;;
-            a{
+            box-sizing:border-box;
+            cursor:pointer;
+            div{
                 width:100%;
                 display:block;
                 padding:15px 0;
@@ -59,18 +59,34 @@ const MenuStyle = styled.div`
              &:hover{
                 background-color:#fff;
                 border:3px solid #7bbff4;
-                 a{
+                div{
                      color:#7bbff4;
                  }
             }
         }
     }
     @media (max-width: 768px) {
+        
+        width: 100%;
+        position: fixed;
+        background: #c6e2f7;
+        height: auto;
+        z-index: 49;
+        padding:70px 0;
+        transition:all 0.3s;
+        transform:translateY(-100%);
+        &.open{
+          
+            transform:translateY(0%);
+        }
         ul{
-            padding-top:70px;
             li{
                 max-width:100%;
                 border-radius:0;
+                margin:20px auto;
+               div{
+                    padding:20px 0;
+                }
             }
         }
     }

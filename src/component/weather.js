@@ -150,20 +150,24 @@ const Cloudy = styled(CloudyIcon)`
 
 
 const Container = styled.div`
-  background-color: #ededed;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 360px;
+  width:100%;
+  margin:15px auto;
+  box-sizing:border-box;
 `;
 
 const WeatherCard = styled.div`
   position: relative;
-  min-width: 360px;
-  box-shadow: 0 1px 3px 0 #999999;
+ 
+  border:1px solid #eee;
   background-color: #f9f9f9;
   box-sizing: border-box;
   padding: 30px 15px;
+  width:100%;
 `;
 
 const Location = styled.div`
