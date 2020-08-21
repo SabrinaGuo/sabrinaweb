@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { css } from '@emotion/core';
-import WeatherIcon from './WeatherIcon';
-import sunriseAndSunsetData from './sunrise-sunset.json'
-import { ReactComponent as CloudyIcon } from './images/day-cloudy.svg';
-import { ReactComponent as AirFlowIcon } from './images/airFlow.svg';
-import { ReactComponent as RainIcon } from './images/rain.svg';
-import { ReactComponent as RefreshIcon } from './images/refresh.svg';
-import { ReactComponent as LoadingIcon } from './images/loading.svg';
+import sunriseAndSunsetData from './sunrise-sunset.json';
+import { ThemeProvider } from 'emotion-theming';
+import WeatherCard from './WeatherCard';
 
 
 const fetchCurrentWeather = () => {
@@ -97,11 +93,24 @@ const getMoment = (locationName) => {
   const nowTimeStamp = now.getTime();
 
   // STEP 8：若當前時間介於日出和日落中間，則表示為白天，否則為晚上
-  return sunriseTimestamp <= nowTimeStamp && nowTimeStamp <= sunsetTimestamp
-    ? 'day'
-    : 'night';
+  return sunriseTimestamp <= nowTimeStamp && nowTimeStamp <= sunsetTimestamp ? 'day' : 'night';
 };
-
+const theme = {
+  light: {
+    backgroundColor: '#ededed',
+    foregroundColor: '#f9f9f9',
+    titleColor: '#212121',
+    temperatureColor: '#757575',
+    textColor: '#828282',
+  },
+  dark: {
+    backgroundColor: '#1F2022',
+    foregroundColor: '#121416',
+    titleColor: '#f9f9fa',
+    temperatureColor: '#dddddd',
+    textColor: '#cccccc',
+  },
+};
 
 const Weather = () => {
   const [weatherElement, setWeatherElement] = React.useState({
@@ -114,21 +123,9 @@ const Weather = () => {
     weatherCode: 0,
     rainPossibility: 0,
     comfortability: '',
-    isLoading:true,
+    isLoading: true,
   });
-
-  const {
-    observationTime,
-    locationName,
-    temperature,
-    windSpeed,
-    description,
-    weatherCode,
-    rainPossibility,
-    comfortability,
-    isLoading,
-  } = weatherElement;
-
+  const [currentTheme, setCurrentTheme] = React.useState('light');
 
   const fetchData = React.useCallback(() => {
     const fetchingData = async () => {
@@ -139,57 +136,45 @@ const Weather = () => {
       setWeatherElement({
         ...currentWeather,
         ...weatherForecast,
-        isLoading:false,
+        isLoading: false,
       });
     }
-    setWeatherElement((prevState)=>({
+    setWeatherElement((prevState) => ({
       ...prevState,
-      isLaoding:true,
+      isLaoding: true,
     }))
     fetchingData();
   }, [])
 
-  const moment = React.useMemo(()=>getMoment(weatherElement.locationName),[weatherElement.locationName]);
+  const moment = React.useMemo(() => getMoment(weatherElement.locationName), [weatherElement.locationName]);
 
   React.useEffect(() => {
     fetchData();
   }, [fetchData]);
 
+  // 根據 moment 決定要使用亮色或暗色主題
+  React.useEffect(() => {
+    setCurrentTheme(moment === 'day' ? 'light' : 'dark');
+    // 記得把 moment 放入 dependencies 中
+  }, [moment]);
 
   return (
-    <Container>
-      <WeatherCard>
-        <Location theme="">{locationName}</Location>
-        <Description>
-          {description} {comfortability}
-        </Description>
-        <CurrentWeather>
-          <Temperature>
-            {Math.round(temperature)} <Celsius>°C</Celsius>
-          </Temperature>
-          <WeatherIcon currentWeatherCode={weatherCode} moment={moment||'day'} />
-        </CurrentWeather>
-        <AirFlow>
-          <AirFlowIcon />
-          {windSpeed}m/h
-              </AirFlow>
-        <Rain>
-          <RainIcon />
-          {rainPossibility}%
-              </Rain>
-        <Refresh onClick={fetchData} isLoading={isLoading}>
-          最後觀測時間:
-                {new Intl.DateTimeFormat('zh-TW', {
-          hour: 'numeric',
-          minute: 'numeric',
-        }).format(new Date(observationTime))}{' '}
-          {isLoading?<LoadingIcon/>:<RefreshIcon />}
-        </Refresh>
-      </WeatherCard>
-    </Container>
+    <ThemeProvider theme={theme[currentTheme]}>
+      < Container >
+        <WeatherCard
+         weatherElement={weatherElement}
+         moment={moment}
+         fetchData={fetchData} 
+         />
+      </Container >
+    </ThemeProvider >
   )
 }
 export default Weather;
+
+
+
+
 
 const buttonDefault = (props) => css`
   display: block;
@@ -216,92 +201,5 @@ const Container = styled.div`
   width:100%;
   margin:15px auto;
   box-sizing:border-box;
-`;
-const WeatherCard = styled.div`
-  position: relative;
- 
-  border:1px solid #eee;
-  background-color: #f9f9f9;
-  box-sizing: border-box;
-  padding: 30px 15px;
-  width:100%;
-`;
-const Location = styled.div`
-  font-size: 28px;
-  color: ${props => props.theme === 'dark' ? '#dadada' : '#212121'};
-  margin-bottom: 20px;
-`;
-const Description = styled.div`
-  font-size: 16px;
-  color: #828282;
-  margin-bottom: 30px;
-`;
-const CurrentWeather = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-`;
-const Temperature = styled.div`
-  color: #757575;
-  font-size: 96px;
-  font-weight: 300;
-  display: flex;
-`;
-const Celsius = styled.div`
-  font-weight: normal;
-  font-size: 42px;
-`;
-const AirFlow = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 16x;
-  font-weight: 300;
-  color: #828282;
-  margin-bottom: 20px;
-
-  svg {
-    width: 25px;
-    height: auto;
-    margin-right: 30px;
-  }
-`;
-const Rain = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 16x;
-  font-weight: 300;
-  color: #828282;
-
-  svg {
-    width: 25px;
-    height: auto;
-    margin-right: 30px;
-  }
-`;
-const Refresh = styled.div`
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  font-size: 12px;
-  display: inline-flex;
-  align-items: flex-end;
-  color: #828282;
-
-  svg {
-    margin-left: 10px;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    animation: rotate infinite 1.5s linear;
-    animation-duration:${({isLoading})=>(isLoading?'1.5s':'0s')};
-  }
-  @keyframes rotate {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
+  background-color:${({ theme }) => theme.backgroundColor};
 `;
