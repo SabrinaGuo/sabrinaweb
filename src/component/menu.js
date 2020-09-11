@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const menuList = ['introduce', 'skills', 'myworks', 'others'];
+// const menuList = ['introduce', 'skills', 'myworks', 'others'];
+const menuList = ['1', '2', '3', '4'];
 
 
 const Menu = (props) => {
