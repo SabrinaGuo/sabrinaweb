@@ -5,8 +5,8 @@ import sunriseAndSunsetData from './sunrise-sunset.json';
 import { ThemeProvider } from 'emotion-theming';
 import WeatherCard from './WeatherCard';
 import useWeatherApi from './useWeatherApi';
-
-
+import WeatherSetting from './WeatherSetting';
+import { findLocation } from './utils';
 
 const getMoment = (locationName) => {
   // STEP 2：從日出日落時間中找出符合的地區
@@ -63,12 +63,40 @@ const theme = {
 };
 
 const Weather = () => {
-  const [weatherElement, fetchData] = useWeatherApi();
+  // 儲存資料
+  // localStorage.setItem(keyName, keyValue);
+
+  // 讀取特定資料
+  // localStorage.getItem(keyName);
+
+  // 清除特定資料
+  // localStorage.removeItem(keyName);
+
+  // 清除全部資料
+  // localStorage.clear();
+
+  // 從 localStorage 取出 cityName，並取名為 storageCity
+  const storageCity = localStorage.getItem('cityName');
+  // 若 storageCity 存在則作為 currentCity 的預設值，否則使用 '臺北市'
+  const [currentCity, setCurrentCity] = React.useState(storageCity || '臺北市');
+  const currentLocation = findLocation(currentCity) || {};
+
+  const [weatherElement, fetchData] = useWeatherApi(currentLocation);
   const [currentTheme, setCurrentTheme] = React.useState('light');
+  const [currentPage, setCurrentPage] = React.useState('WeatherCard');
 
 
 
-  const moment = React.useMemo(() => getMoment(weatherElement.locationName), [weatherElement.locationName]);
+  // 當 currentCity 有改變的時候，儲存到 localStorage 中
+  React.useEffect(() => {
+    localStorage.setItem('cityName', currentCity);
+    // dependencies 中放入 currentCity
+  }, [currentCity]);
+
+  // const moment = React.useMemo(() => getMoment(weatherElement.locationName), [weatherElement.locationName]);
+  const moment = React.useMemo(() => getMoment(currentLocation.sunriseCityName), [
+    currentLocation.sunriseCityName,
+  ]);
 
 
 
@@ -81,11 +109,24 @@ const Weather = () => {
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       < Container >
-        <WeatherCard
-         weatherElement={weatherElement}
-         moment={moment}
-         fetchData={fetchData} 
-         />
+        {currentPage === 'WeatherCard' && (
+          <WeatherCard
+            weatherElement={weatherElement}
+            moment={moment}
+            fetchData={fetchData}
+            setCurrentPage={setCurrentPage}
+            cityName={currentLocation.cityName}
+          />
+        )}
+
+        {currentPage === 'WeatherSetting' && (
+          <WeatherSetting
+            setCurrentPage={setCurrentPage}
+            cityName={currentLocation.cityName}
+            setCurrentCity={setCurrentCity}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
       </Container >
     </ThemeProvider >
   )
