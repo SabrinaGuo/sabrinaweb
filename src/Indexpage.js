@@ -28,14 +28,14 @@ const Indexpage = () => {
       {(() => {
         switch (menuPage) {
           case '關於我': return (<h1>建構中</h1>); break;
-          case '相關作品': return (<h1>整理中</h1>); break;
+          case '相關作品': return  <MyWorks/>; break;
           case '網路速度轉換計算': return <NetSpeedConverter />; break;
           case '氣象預報': return <Weather />; break;
           default: return null;
         }
       })()}
       {/* <Weather /> */}
-      <MyWorks/>
+      {/* <MyWorks/> */}
     </BodyStyle>
   );
 }
