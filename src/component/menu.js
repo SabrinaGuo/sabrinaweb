@@ -2,17 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 // const menuList = ['introduce', 'skills', 'myworks', 'others'];
-const menuList = ['1', '2', '3', '4'];
+// const menuList = ['1', '2', '3', '4'];
 
 
 const Menu = (props) => {
+    const {open, menuList,menuChange} = props;
     return (
-        <MenuStyle className={props.open && 'open'}>
+        <MenuStyle className={open && 'open'} menuList={menuList}> 
             <ul>
                 {
                     menuList.map((item, idx) => {
                         return (
-                            <li key={idx} >
+                            <li key={idx} onClick={() =>menuChange(idx)}>
                                 <div>{item}</div>
                             </li>
                         )
@@ -37,7 +38,7 @@ const MenuStyle = styled.div`
         align-items: center;
         flex-wrap:wrap;
         li{
-            max-width:calc((100% / ${menuList.length}) - 20px);
+            max-width:calc((100% / ${props => props.menuList.length}) - 20px);
             margin:0 10px;
             width:100%;
             list-style-type:none;
