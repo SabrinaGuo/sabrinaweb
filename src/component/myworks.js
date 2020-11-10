@@ -8,14 +8,14 @@ import WorksList from './work-list.json';
 const MyWorks = () => {
     const [resource, setResources] = React.useState({});
     const data = WorksList;
-    console.log(data);
+    console.log(data[0].make[0].img);
     return (
         <div>
             <Works>
-                <li><p>123456</p></li>
-                <li><p>123456</p></li>
-                <li><p>123456</p></li>
-                <li><p>123456</p></li>
+                <li>
+                    <figure style={`background-image:url('${data[0].make[0].img}')`}></figure>
+                </li>
+               
             </Works>
         </div>
     )
@@ -39,5 +39,11 @@ const Works = styled.ul`
         margin:10px;
         background-color:lightcoral;
         border-radius:5px;
+        figure{
+            width:100%;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
     }
 `

@@ -6,14 +6,16 @@ import styled from 'styled-components';
 
 
 const Menu = (props) => {
-    const {open, menuList,menuChange} = props;
+    const {open, menuList,menuChange,menuPage} = props;
     return (
         <MenuStyle className={open && 'open'} menuList={menuList}> 
             <ul>
                 {
                     menuList.map((item, idx) => {
                         return (
-                            <li key={idx} onClick={() =>menuChange(idx)}>
+                            <li key={idx} className={menuPage === item ?'on':''} onClick={() =>{
+                                menuChange(idx);
+                                }}>
                                 <div>{item}</div>
                             </li>
                         )
@@ -58,7 +60,7 @@ const MenuStyle = styled.div`
                 text-decoration:none;
                 transition:all 0.3s;
             }
-             &:hover{
+             &:hover,&.on{
                 background-color:#fff;
                 border:3px solid #7bbff4;
                 div{
