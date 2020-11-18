@@ -38,15 +38,18 @@ const Indexpage = () => {
         }
       })()} */}
       <Weather />
-      <Information />
-      <Skills />
-      <MyWorks data={data} yearIdx={1} workType={'make'}/>
+      <TwoRow>
+        <Information />
+        <Skills />
+      </TwoRow>
+
+      <MyWorks data={data} yearIdx={1} workType={'make'} />
       {/* <hr /> */}
-      <MyWorks data={data} yearIdx={1} workType={'cooperation'}/>
+      <MyWorks data={data} yearIdx={1} workType={'cooperation'} />
       {/* <hr /> */}
-      <MyWorks data={data} yearIdx={0} workType={'make'}/>
+      <MyWorks data={data} yearIdx={0} workType={'make'} />
       {/* <hr /> */}
-      <MyWorks data={data} yearIdx={0} workType={'cooperation'}/>
+      <MyWorks data={data} yearIdx={0} workType={'cooperation'} />
     </BodyStyle>
   );
 }
@@ -58,4 +61,13 @@ const BodyStyle = styled.div`
   width:100%;
   box-sizing: border-box;
   
+`
+const TwoRow = styled.div`
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+
 `
