@@ -24,8 +24,12 @@ const SkillSty = styled.div`
     display:inline-block;
     vertical-align:top;
     ul{
+        padding:0 0 0 5px;
         width:100%;
         list-style:none;
+    }
+    @media (max-width: 768px) {
+
     }
 `
  // Create the keyframes

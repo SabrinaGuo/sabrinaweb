@@ -43,13 +43,13 @@ const Indexpage = () => {
         <Skills />
       </TwoRow>
 
-      <MyWorks data={data} yearIdx={1} workType={'make'} />
+      {/* <MyWorks data={data} yearIdx={1} workType={'make'} /> */}
       {/* <hr /> */}
-      <MyWorks data={data} yearIdx={1} workType={'cooperation'} />
+      {/* <MyWorks data={data} yearIdx={1} workType={'cooperation'} /> */}
       {/* <hr /> */}
-      <MyWorks data={data} yearIdx={0} workType={'make'} />
+      {/* <MyWorks data={data} yearIdx={0} workType={'make'} /> */}
       {/* <hr /> */}
-      <MyWorks data={data} yearIdx={0} workType={'cooperation'} />
+      {/* <MyWorks data={data} yearIdx={0} workType={'cooperation'} /> */}
     </BodyStyle>
   );
 }
