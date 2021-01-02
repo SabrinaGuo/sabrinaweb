@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sabrinaweb/precache-manifest.ca362af540b6b6189ef14e6258d8b761.js"
+  "/sabrinaweb/precache-manifest.99cfaff4b5350ad6d080df07cb54406f.js"
 );
 
 self.addEventListener('message', (event) => {
