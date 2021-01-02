@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sabrinaweb/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/sabrinaweb/static/js/main.b877ab6e.chunk.js",
-    "main.js.map": "/sabrinaweb/static/js/main.b877ab6e.chunk.js.map",
+    "main.js": "/sabrinaweb/static/js/main.94a90eff.chunk.js",
+    "main.js.map": "/sabrinaweb/static/js/main.94a90eff.chunk.js.map",
     "runtime-main.js": "/sabrinaweb/static/js/runtime-main.2c71b949.js",
     "runtime-main.js.map": "/sabrinaweb/static/js/runtime-main.2c71b949.js.map",
     "static/js/2.0a250eca.chunk.js": "/sabrinaweb/static/js/2.0a250eca.chunk.js",
     "static/js/2.0a250eca.chunk.js.map": "/sabrinaweb/static/js/2.0a250eca.chunk.js.map",
     "index.html": "/sabrinaweb/index.html",
-    "precache-manifest.e7d3a994bd21048e59a7d112ce14d1a4.js": "/sabrinaweb/precache-manifest.e7d3a994bd21048e59a7d112ce14d1a4.js",
+    "precache-manifest.ca362af540b6b6189ef14e6258d8b761.js": "/sabrinaweb/precache-manifest.ca362af540b6b6189ef14e6258d8b761.js",
     "service-worker.js": "/sabrinaweb/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/sabrinaweb/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.0a250eca.chunk.js.LICENSE.txt": "/sabrinaweb/static/js/2.0a250eca.chunk.js.LICENSE.txt",
@@ -63,6 +63,6 @@
     "static/js/runtime-main.2c71b949.js",
     "static/js/2.0a250eca.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.b877ab6e.chunk.js"
+    "static/js/main.94a90eff.chunk.js"
   ]
 }

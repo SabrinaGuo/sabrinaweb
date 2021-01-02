@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "73ee54d7a6f834b683f80e51f7ff4390",
+    "revision": "70e529a8cc2b9afa845cf521fbe4dfbc",
     "url": "/sabrinaweb/index.html"
   },
   {
-    "revision": "a7c5f49e8c47a4025133",
+    "revision": "386bebb41bf49b6c3954",
     "url": "/sabrinaweb/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sabrinaweb/static/js/2.0a250eca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a7c5f49e8c47a4025133",
-    "url": "/sabrinaweb/static/js/main.b877ab6e.chunk.js"
+    "revision": "386bebb41bf49b6c3954",
+    "url": "/sabrinaweb/static/js/main.94a90eff.chunk.js"
   },
   {
     "revision": "6ea0b8e7587db8c8f7eb",
