@@ -29,20 +29,20 @@ const acceptButton = styled.button`
 
 // 透過 styled(組件) 來把樣式帶入已存在的組件中
 
-const Cloudy = styled(CloudyIcon)`
-  /* 在這裡寫入 CSS 樣式 */
-  flex-basis: 30%;
-`;
+// const Cloudy = styled(CloudyIcon)`
+//   /* 在這裡寫入 CSS 樣式 */
+//   flex-basis: 30%;
+// `;
 
-const Redo = styled(RedoIcon)`
-  /* 在這裡寫入 CSS 樣式 */
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  cursor: pointer;
-`;
+// const Redo = styled(RedoIcon)`
+//   /* 在這裡寫入 CSS 樣式 */
+//   width: 15px;
+//   height: 15px;
+//   position: absolute;
+//   right: 15px;
+//   bottom: 15px;
+//   cursor: pointer;
+// `;
 
 
 const Container = styled.div`

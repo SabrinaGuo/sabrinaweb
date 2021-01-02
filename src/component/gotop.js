@@ -55,12 +55,12 @@ const Gotop = props => {
     position: fixed;
     bottom: 50px;
     right: 50px;
-    color: #343434;
+    color: #8e8585;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color:#fff;
-    border:2px solid #7bbff4;
+    background-color:transparent;
+    border:2px solid #8e8585;
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
@@ -68,12 +68,12 @@ const Gotop = props => {
       props.style.showGoTopBtn ? "block" : "none"};
     span {
       line-height: 60px;
-      color: #7bbff4;
+      color: #8e8585;
     }
     &:hover {
-      background-color: #7bbff4;
+      background-color:#a89886;
       span {
-        color: #fff;
+        color: #72634f;
       }
     }
     @media (max-width: 768px) {
