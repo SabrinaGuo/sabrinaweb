@@ -8,7 +8,7 @@ const Skills = () => {
                 <LiSty per="90"><p>HTML5</p></LiSty>
                 <LiSty per="90"><p>CSS3 & SCSS</p></LiSty>
                 <LiSty per="80"><p>JAVASCRIPT</p></LiSty>
-                <LiSty per="88"><p>JQUERY</p></LiSty>
+                <LiSty per="86"><p>JQUERY</p></LiSty>
                 <LiSty per="75"><p>PHOTOSHOP</p></LiSty>
                 <LiSty per="60"><p>ILLUSTRATOR</p></LiSty>
             </ul>
