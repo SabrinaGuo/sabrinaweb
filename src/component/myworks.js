@@ -124,7 +124,7 @@ const MyWorks = (props) => {
                                             </figure>
                                         </div>
                                         <div className="introArea">
-                                            <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "" : ""} disable={year.link === "" ? "disable" : "disable"} href={year.link !== "" ? data[yearIdx].cooperation[idx].link : ""}><p>{year.link === "" ? "已下架" : "上線中"}</p></a>
+                                            <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "" : ""} disable={year.link === "" ? "disable" : "disable"} href={year.link !== "" ? "javascript:;" : "javascript:;"}><p>{year.link === "" ? "已下架" : "上線中"}</p></a>
                                             {/* <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "_blank"
                                                 : ""} disable={year.link === "" ? "disable" : ""} href={year.link !== "" ? data[yearIdx].cooperation[idx].link : ""}><p>{year.link === "" ? "已下架" : "前往"}</p></a> */}
                                             <div className="workName"><p>{year.name}</p></div>
