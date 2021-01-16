@@ -84,7 +84,8 @@ const MyWorks = (props) => {
                                             </figure>
                                         </div>
                                         <div className="introArea">
-                                            <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "_blank" : ''} disable={year.link === "" ? "disable" : ""} href={year.link !== "" ? data[yearIdx].make[idx].link : ""}><p>{year.link === "" ? "已下架" : "前往"}</p></a>
+                                            <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "" : ''} disable={year.link === "" ? "disable" : "disable"} href={year.link !== "" ? 'javascript:;' : "javascript:;"}><p>{year.link === "" ? "已下架" : "上線中"}</p></a>
+                                            {/* <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "_blank" : ''} disable={year.link === "" ? "disable" : ""} href={year.link !== "" ? data[yearIdx].make[idx].link : ""}><p>{year.link === "" ? "已下架" : "前往"}</p></a> */}
                                             <div className="workName"><p>{year.name}</p></div>
                                         </div>
                                     </li>
@@ -92,7 +93,7 @@ const MyWorks = (props) => {
                             })
                         }
                     </ul>
-                       
+
                     {/* <div className={"moreBtn"} onClick={openList}><p>{open ? "CLOSE" : "MORE"}</p></div> */}
 
 
@@ -123,8 +124,9 @@ const MyWorks = (props) => {
                                             </figure>
                                         </div>
                                         <div className="introArea">
-                                            <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "_blank"
-                                                : ""} disable={year.link === "" ? "disable" : ""} href={year.link !== "" ? data[yearIdx].cooperation[idx].link : ""}><p>{year.link === "" ? "已下架" : "前往"}</p></a>
+                                            <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "" : ""} disable={year.link === "" ? "disable" : "disable"} href={year.link !== "" ? data[yearIdx].cooperation[idx].link : ""}><p>{year.link === "" ? "已下架" : "上線中"}</p></a>
+                                            {/* <a className={year.link === "" ? "disable" : ""} target={year.link !== "" ? "_blank"
+                                                : ""} disable={year.link === "" ? "disable" : ""} href={year.link !== "" ? data[yearIdx].cooperation[idx].link : ""}><p>{year.link === "" ? "已下架" : "前往"}</p></a> */}
                                             <div className="workName"><p>{year.name}</p></div>
                                         </div>
                                     </li>
@@ -132,7 +134,7 @@ const MyWorks = (props) => {
                             })
                         }
                     </ul>
-                   
+
                     {/* <div className={"moreBtn"} onClick={openList}><p>{open ? "CLOSE" : "MORE"}</p></div> */}
                 </Works>
             </div>
@@ -230,9 +232,11 @@ const Works = styled.div`
             border-radius:5px;
             &.disable{
                 cursor:default;
-                background-color:#8e8585;
+                background-color:#f0be99;
+                // background-color:#8e8585;
                 &:hover{
-                    background-color:#8e8585;
+                    background-color:#f0be99;
+                    // background-color:#8e8585;
                 }
                 p{
                     color:#000;
