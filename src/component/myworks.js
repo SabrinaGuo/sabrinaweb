@@ -230,6 +230,7 @@ const Works = styled.div`
             text-decoration:none;
             margin:8px 0;
             border-radius:5px;
+            cursor:default;
             &.disable{
                 cursor:default;
                 background-color:#f0be99;
@@ -249,7 +250,8 @@ const Works = styled.div`
                 letter-spacing:5px;
             }
             &:hover{
-                background-color:#938169;
+                // background-color:#938169;
+                background-color:#72634f;
             }
         }
         .workName{
