@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sabrinaweb/static/css/main.69eda509.chunk.css",
-    "main.js": "/sabrinaweb/static/js/main.41da79ca.chunk.js",
-    "main.js.map": "/sabrinaweb/static/js/main.41da79ca.chunk.js.map",
+    "main.css": "/sabrinaweb/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/sabrinaweb/static/js/main.4bbbfe6c.chunk.js",
+    "main.js.map": "/sabrinaweb/static/js/main.4bbbfe6c.chunk.js.map",
     "runtime-main.js": "/sabrinaweb/static/js/runtime-main.2c71b949.js",
     "runtime-main.js.map": "/sabrinaweb/static/js/runtime-main.2c71b949.js.map",
     "static/js/2.0a250eca.chunk.js": "/sabrinaweb/static/js/2.0a250eca.chunk.js",
     "static/js/2.0a250eca.chunk.js.map": "/sabrinaweb/static/js/2.0a250eca.chunk.js.map",
     "index.html": "/sabrinaweb/index.html",
-    "precache-manifest.9216ce2d3eeede5c6b3ac705b26b34b3.js": "/sabrinaweb/precache-manifest.9216ce2d3eeede5c6b3ac705b26b34b3.js",
+    "precache-manifest.a9e1f28d87229486d3cd043b9845df98.js": "/sabrinaweb/precache-manifest.a9e1f28d87229486d3cd043b9845df98.js",
     "service-worker.js": "/sabrinaweb/service-worker.js",
-    "static/css/main.69eda509.chunk.css.map": "/sabrinaweb/static/css/main.69eda509.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/sabrinaweb/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.0a250eca.chunk.js.LICENSE.txt": "/sabrinaweb/static/js/2.0a250eca.chunk.js.LICENSE.txt",
     "static/media/arw-zero-jgbyjyewY5k-unsplash.jpg": "/sabrinaweb/static/media/arw-zero-jgbyjyewY5k-unsplash.6523e6ed.jpg",
     "static/media/全台借問站活動網站.jpg": "/sabrinaweb/static/media/全台借問站活動網站.e1c0735e.jpg",
@@ -62,7 +62,7 @@
   "entrypoints": [
     "static/js/runtime-main.2c71b949.js",
     "static/js/2.0a250eca.chunk.js",
-    "static/css/main.69eda509.chunk.css",
-    "static/js/main.41da79ca.chunk.js"
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.4bbbfe6c.chunk.js"
   ]
 }
